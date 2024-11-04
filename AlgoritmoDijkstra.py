@@ -59,7 +59,7 @@ while True:
     except ValueError as e:
         print(e)
 
-print("Grafo")
+print("Grafo Creado:")
 for nodo, vecinos in grafo.items():
     print(f"{nodo}: {vecinos}")
 
@@ -71,8 +71,6 @@ while True:
             break
     except ValueError:
         print("Nodo de inicio no válido.")
-
-
 distancias = dijkstra(grafo, inicio)
 print("Distancias más cortas desde el nodo de inicio:")
 for nodo, distancia in distancias.items():

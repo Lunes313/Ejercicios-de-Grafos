@@ -7,28 +7,23 @@ def dijkstra(grafo, inicio):
     # Cola de prioridad
     cola = [(0, inicio)]
     procesados = {}
-
     while cola:
         # Se extrae el nodo con menor distancia
         distanciaN, nodo = heapq.heappop(cola)
-
         # Si el nodo ya fue procesado, se ignora
         if nodo in procesados:
             continue
-
         # Marcar el nodo como procesado
         procesados[nodo] = distanciaN
-
         # Recorrer los vecinos del nodo actual
         for vecino, peso in grafo[nodo]:
             distancia_total = distanciaN + peso
             if distancia_total < distancia[vecino]:
                 distancia[vecino] = distancia_total
                 heapq.heappush(cola, (distancia_total, vecino))
-
     return distancia
 
-# Crear el grafo ingresado por el usuario con manejo de errores
+# Crear un grafo ingresado por el usuario
 grafo = {}
 while True:
     try:

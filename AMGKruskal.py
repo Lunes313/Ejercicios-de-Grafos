@@ -18,6 +18,7 @@ def UnionFind():
     return find, union
 
 def kruskal(grafo, nodos):
+    #ordena la lista de aristas por peso
     grafo.sort(key=lambda x: x[2])
     find, union = UnionFind()
     padres = {nodo: nodo for nodo in range(1, nodos + 1)}
